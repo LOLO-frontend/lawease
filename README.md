@@ -29,9 +29,15 @@ See `.env.example`:
 - `JWT_SECRET`
 - `ALLOWED_ORIGIN` (comma-separated)
 - `DB_FILE`
+- `MONGODB_URI`
+- `MONGODB_DB_NAME`
+- `MONGODB_COLLECTION`
+- `MONGODB_STATE_KEY`
 - `UPLOAD_DIR`
 - `S3_BUCKET`
 - `S3_REGION`
+- `S3_ENDPOINT`
+- `S3_FORCE_PATH_STYLE`
 - `AWS_ACCESS_KEY_ID`
 - `AWS_SECRET_ACCESS_KEY`
 - `AWS_SESSION_TOKEN`
@@ -63,6 +69,8 @@ Document endpoint supports multipart form uploads (`file` field):
 
 For S3 storage, set `S3_BUCKET` and `S3_REGION` (plus AWS credentials).  
 If unset, storage defaults to local disk (`UPLOAD_DIR`).
+
+For durable free-mode DB storage on Render, set `MONGODB_URI` (Atlas free tier) and keep `MONGODB_DB_NAME` defaults.
 
 ## Tests
 

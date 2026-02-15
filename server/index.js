@@ -21,6 +21,8 @@ const PASSWORD_RESET_TOKEN_TTL_MINUTES = Number(process.env.PASSWORD_RESET_TOKEN
 const UPLOAD_DIR = process.env.UPLOAD_DIR || path.join(__dirname, "uploads");
 const S3_BUCKET = process.env.S3_BUCKET || "";
 const S3_REGION = process.env.S3_REGION || "";
+const S3_ENDPOINT = process.env.S3_ENDPOINT || "";
+const S3_FORCE_PATH_STYLE = process.env.S3_FORCE_PATH_STYLE === "true";
 const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGIN || `http://localhost:${PORT},http://127.0.0.1:${PORT},http://localhost:5500,http://127.0.0.1:5500`)
   .split(",")
   .map((v) => v.trim())
@@ -50,6 +52,8 @@ if (!fs.existsSync(UPLOAD_DIR)) {
 const s3Client = USE_S3
   ? new S3Client({
       region: S3_REGION,
+      endpoint: S3_ENDPOINT || undefined,
+      forcePathStyle: S3_FORCE_PATH_STYLE,
       credentials:
         process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY
           ? {

@@ -17,6 +17,13 @@ Optional S3 storage:
 - `AWS_SECRET_ACCESS_KEY=<secret>`
 - `AWS_SESSION_TOKEN=<token-if-needed>`
 
+Free durable mode recommendation:
+- `MONGODB_URI=<mongodb-atlas-connection-string>`
+- `MONGODB_DB_NAME=lawease`
+- `MONGODB_COLLECTION=app_state`
+- `MONGODB_STATE_KEY=primary`
+- `S3_BUCKET`, `S3_REGION`, and credentials (or Cloudflare R2 using `S3_ENDPOINT`)
+
 ## 2) Render (Recommended)
 
 1. Push repo to GitHub.
@@ -42,3 +49,8 @@ Run:
 - Create client/case/document/message
 - Open `admin.html` and verify user/audit views
 - Upload/download one document
+
+## 5) Free Durable Providers
+
+- DB: MongoDB Atlas free cluster (`MONGODB_URI`)
+- Files: Cloudflare R2 or AWS S3 free tier (`S3_*` + credentials)

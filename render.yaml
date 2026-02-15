@@ -11,6 +11,14 @@ services:
         value: 4000
       - key: DB_FILE
         value: server/data.json
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB_NAME
+        value: lawease
+      - key: MONGODB_COLLECTION
+        value: app_state
+      - key: MONGODB_STATE_KEY
+        value: primary
       - key: UPLOAD_DIR
         value: server/uploads
       - key: PASSWORD_RESET_TOKEN_TTL_MINUTES
@@ -23,6 +31,10 @@ services:
         sync: false
       - key: S3_REGION
         sync: false
+      - key: S3_ENDPOINT
+        sync: false
+      - key: S3_FORCE_PATH_STYLE
+        value: false
       - key: AWS_ACCESS_KEY_ID
         sync: false
       - key: AWS_SECRET_ACCESS_KEY
