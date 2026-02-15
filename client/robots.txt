@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lawease-awfm.onrender.com/sitemap.xml
