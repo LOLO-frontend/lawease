@@ -2,7 +2,7 @@ services:
   - type: web
     name: lawease
     runtime: docker
-    plan: free
+    plan: starter
     healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
@@ -10,9 +10,9 @@ services:
       - key: PORT
         value: 4000
       - key: DB_FILE
-        value: server/data.json
+        value: /var/data/data.json
       - key: UPLOAD_DIR
-        value: server/uploads
+        value: /var/data/uploads
       - key: PASSWORD_RESET_TOKEN_TTL_MINUTES
         value: 30
       - key: JWT_SECRET
@@ -27,3 +27,7 @@ services:
         sync: false
       - key: AWS_SECRET_ACCESS_KEY
         sync: false
+    disk:
+      name: lawease-data
+      mountPath: /var/data
+      sizeGB: 1
