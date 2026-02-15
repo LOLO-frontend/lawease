@@ -27,7 +27,7 @@ services:
         sync: false
       - key: AWS_SECRET_ACCESS_KEY
         sync: false
-    disks:
-      - name: lawease-data
-        mountPath: /var/data
-        sizeGB: 1
+    disk:
+      name: lawease-data
+      mountPath: /var/data
+      sizeGB: 1
