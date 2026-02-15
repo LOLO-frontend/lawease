@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LawEase - Sign Up</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>LawEase</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Log In</a>
+    </nav>
+  </header>
+
+  <main class="container auth-layout">
+    <section class="card auth-card glass">
+      <span class="kicker">Get Started</span>
+      <h2 class="section-title">Create your LawEase workspace</h2>
+      <form id="signup-form" class="stack">
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="Alex Johnson" required />
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="you@firm.com" required />
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="At least 8 characters" required />
+
+        <label>Role</label>
+        <select name="role">
+          <option value="lawyer">Lawyer</option>
+          <option value="staff">Staff</option>
+        </select>
+
+        <button type="submit">Create Account</button>
+      </form>
+      <p id="signup-status" class="status"></p>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

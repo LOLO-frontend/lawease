@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LawEase - Clients</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Clients</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="clients.html">Clients</a>
+      <a href="cases.html">Cases</a>
+      <a href="documents.html">Documents</a>
+      <a href="admin.html" data-admin-only class="hidden">Admin</a>
+      <button id="logout-button" class="inline-button" type="button">Log Out</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <span class="kicker">CRM</span>
+        <h2 class="section-title">Client Records</h2>
+      </div>
+    </div>
+
+    <section class="card glass">
+      <h3 class="section-title">Add Client</h3>
+      <form id="client-form" class="stack">
+        <label>Full Name</label>
+        <input type="text" name="fullName" required />
+
+        <label>Email</label>
+        <input type="email" name="email" />
+
+        <label>Phone</label>
+        <input type="text" name="phone" />
+
+        <label>Notes</label>
+        <input type="text" name="notes" />
+
+        <button type="submit">Save Client</button>
+      </form>
+      <p id="client-status" class="status"></p>
+    </section>
+
+    <section class="card" style="margin-top: 16px;">
+      <h3 class="section-title">Your Clients</h3>
+      <div id="clients-list"></div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/clients.js"></script>
+</body>
+</html>

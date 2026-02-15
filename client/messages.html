@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LawEase - Messages</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Messages</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="cases.html">Cases</a>
+      <a href="clients.html">Clients</a>
+      <a href="documents.html">Documents</a>
+      <a href="admin.html" data-admin-only class="hidden">Admin</a>
+      <button id="logout-button" class="inline-button" type="button">Log Out</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card glass">
+      <span class="kicker">Communications</span>
+      <h2 class="section-title">Log Message</h2>
+      <form id="message-form" class="stack">
+        <label>Subject</label>
+        <input type="text" name="subject" required />
+
+        <label>Recipient</label>
+        <input type="text" name="toName" />
+
+        <label>Channel</label>
+        <select name="channel">
+          <option value="email">Email</option>
+          <option value="sms">SMS</option>
+          <option value="phone">Phone Call</option>
+          <option value="in-person">In Person</option>
+        </select>
+
+        <label>Linked Case ID (optional)</label>
+        <input type="text" name="linkedCaseId" />
+
+        <label>Linked Client ID (optional)</label>
+        <input type="text" name="linkedClientId" />
+
+        <label>Message Body</label>
+        <textarea name="body" rows="5" required></textarea>
+
+        <button type="submit">Save Message</button>
+      </form>
+      <p id="message-status" class="status"></p>
+    </section>
+
+    <section class="card" style="margin-top:16px;">
+      <h3 class="section-title">Message History</h3>
+      <div id="messages-list"></div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/messages.js"></script>
+</body>
+</html>

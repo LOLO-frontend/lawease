@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LawEase - Log In</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>LawEase</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <main class="container auth-layout">
+    <section class="card auth-card glass">
+      <span class="kicker">Welcome Back</span>
+      <h2 class="section-title">Sign in to your practice dashboard</h2>
+      <form id="login-form" class="stack">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="you@firm.com" required />
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="At least 8 characters" required />
+
+        <button type="submit">Sign In</button>
+      </form>
+      <p id="login-status" class="status"></p>
+
+      <hr style="margin:16px 0;border:0;border-top:1px solid #d4deea;">
+
+      <h3 class="section-title" style="font-size:1rem;">Forgot Password</h3>
+      <form id="reset-request-form" class="stack">
+        <label>Account Email</label>
+        <input type="email" name="email" placeholder="you@firm.com" required />
+        <button type="submit" class="button-secondary">Request Reset Token</button>
+      </form>
+      <p id="reset-request-status" class="status"></p>
+
+      <form id="reset-confirm-form" class="stack">
+        <label>Reset Token</label>
+        <input type="text" name="token" placeholder="Paste token here" required />
+        <label>New Password</label>
+        <input type="password" name="newPassword" placeholder="At least 8 characters" required />
+        <button type="submit" class="button-secondary">Reset Password</button>
+      </form>
+      <p id="reset-confirm-status" class="status"></p>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

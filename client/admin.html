@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LawEase - Admin</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Admin</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="clients.html">Clients</a>
+      <a href="cases.html">Cases</a>
+      <a href="documents.html">Documents</a>
+      <a href="messages.html">Messages</a>
+      <a href="admin.html" data-admin-only>Admin</a>
+      <button id="logout-button" class="inline-button" type="button">Log Out</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card glass">
+      <span class="kicker">Administration</span>
+      <h2 class="section-title">User Roles</h2>
+      <p class="muted" id="admin-status">Loading...</p>
+      <div id="users-root"></div>
+    </section>
+
+    <section class="card" style="margin-top:16px;">
+      <h2 class="section-title">Recent Audit Logs</h2>
+      <div id="logs-root"></div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

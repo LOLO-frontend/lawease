@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LawEase - Documents</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Documents</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="cases.html">Cases</a>
+      <a href="clients.html">Clients</a>
+      <a href="messages.html">Messages</a>
+      <a href="admin.html" data-admin-only class="hidden">Admin</a>
+      <button id="logout-button" class="inline-button" type="button">Log Out</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card glass">
+      <span class="kicker">Document Center</span>
+      <h2 class="section-title">Add Document Metadata</h2>
+      <form id="document-form" class="stack" enctype="multipart/form-data">
+        <label>Title</label>
+        <input type="text" name="title" required />
+
+        <label>Type</label>
+        <select name="type">
+          <option value="general">General</option>
+          <option value="contract">Contract</option>
+          <option value="filing">Court Filing</option>
+          <option value="evidence">Evidence</option>
+        </select>
+
+        <label>Linked Case ID (optional)</label>
+        <input type="text" name="linkedCaseId" />
+
+        <label>Linked Client ID (optional)</label>
+        <input type="text" name="linkedClientId" />
+
+        <label>Notes</label>
+        <input type="text" name="notes" />
+
+        <label>Attach File (optional)</label>
+        <input type="file" name="file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.txt" />
+
+        <button type="submit">Save Document</button>
+      </form>
+      <p id="document-status" class="status"></p>
+    </section>
+
+    <section class="card" style="margin-top:16px;">
+      <h3 class="section-title">Your Documents</h3>
+      <div id="documents-list"></div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/docs.js"></script>
+</body>
+</html>

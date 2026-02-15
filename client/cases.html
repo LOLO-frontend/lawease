@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LawEase - Cases</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Cases</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="clients.html">Clients</a>
+      <a href="cases.html">Cases</a>
+      <a href="documents.html">Documents</a>
+      <a href="admin.html" data-admin-only class="hidden">Admin</a>
+      <button id="logout-button" class="inline-button" type="button">Log Out</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <span class="kicker">Matter Tracker</span>
+        <h2 class="section-title">Case Management</h2>
+      </div>
+    </div>
+
+    <section class="card glass">
+      <h3 class="section-title">Add Case</h3>
+      <form id="case-form" class="stack">
+        <label>Case Title</label>
+        <input type="text" name="title" required />
+
+        <label>Client Name</label>
+        <input type="text" name="clientName" />
+
+        <label>Status</label>
+        <select name="status">
+          <option value="open">Open</option>
+          <option value="pending">Pending</option>
+          <option value="closed">Closed</option>
+        </select>
+
+        <label>Court</label>
+        <input type="text" name="court" />
+
+        <label>Next Hearing Date</label>
+        <input type="date" name="nextHearingDate" />
+
+        <label>Notes</label>
+        <input type="text" name="notes" />
+
+        <button type="submit">Save Case</button>
+      </form>
+      <p id="case-status" class="status"></p>
+    </section>
+
+    <section class="card" style="margin-top: 16px;">
+      <h3 class="section-title">Your Cases</h3>
+      <div id="cases-list"></div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cases.js"></script>
+</body>
+</html>
